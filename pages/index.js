@@ -74,12 +74,6 @@ const Home = () => {
         <div className={Style.heroSection}>
           <div className={Style.heroSection_left}>
             <h1>SECURE YOUR FUTURE IN DEFI WITH zKrypt</h1>
-            <p style={{ fontWeight: "bold" }}>
-              Connected Account: {account?.slice(0, 6)}...{account?.slice(-4)}
-            </p>
-            <p>
-              Balance: {parseFloat(accountBallanc).toLocaleString()} ZKT
-            </p>
             <p>
               The first ICO powered by Zama's Fully Homomorphic Encryption (FHE). Invest and transact with absolute data privacy,
               ensuring your computations remain confidential on-chain.
