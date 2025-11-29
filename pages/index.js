@@ -91,7 +91,7 @@ const Home = () => {
               <button className={Style.btn}>Product Intro</button>
             </div>
 
-            {/* PROFESSIONAL SIDE-BY-SIDE SOCIAL ICONS - NO WRAPPING */}
+            {/* ICONS ONLY - NO TEXT - SIDE-BY-SIDE */}
             <div className={Style.socialIconsPro}>
               <Link href="https://github.com/kalabmesfin/zKrypt-FHE-ICO" target="_blank" rel="noopener noreferrer" className={Style.socialLink}>
                 <div className={`${Style.socialBtn} ${Style.github}`}>
