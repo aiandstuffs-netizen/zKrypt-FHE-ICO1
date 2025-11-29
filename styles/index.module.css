@@ -196,125 +196,129 @@
   }
 }
 
-/* Social Icons Container */
-.socialIconsContainer {
-  margin-top: 30px;
-  padding: 20px 0;
-  border-top: 1px solid #e0e0e0;
-}
-
-.socialIconsContainer h3 {
-  text-align: center;
-  color: #333;
-  font-weight: 500;
-}
-
-/* Social Icons Grid */
-.socialIcons {
-  display: flex;
+.socialIconsPro {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  gap: 12px;
   justify-content: center;
-  gap: 20px;
-  margin-top: 15px;
-  flex-wrap: wrap;
-}
-
-/* Individual Social Icon Wrapper */
-.socialIconWrapper {
-  position: relative;
-  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  margin-top: 40px;
+  padding: 20px 0;
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Individual Social Links */
+.socialLink {
+  display: inline-flex !important;
+  flex-shrink: 0 !important;
+  text-decoration: none;
+}
+
+/* Base Social Button */
+.socialBtn {
+  width: 56px !important;
+  height: 56px !important;
+  min-width: 56px !important;
+  border-radius: 16px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
   overflow: hidden;
+  backdrop-filter: blur(10px);
+  border: 2px solid transparent;
+  flex-shrink: 0 !important;
 }
 
-.socialIconWrapper:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
+/* Brand-specific colors & hover effects */
+.github {
+  background: rgba(13, 14, 17, 0.9);
+  border-color: rgba(46, 164, 79, 0.3);
 }
 
-.socialIconWrapper:active {
+.github:hover {
+  background: rgba(46, 164, 79, 0.15);
+  border-color: #2ea33f;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(46, 164, 79, 0.3);
+}
+
+.discord {
+  background: rgba(116, 127, 151, 0.9);
+  border-color: rgba(114, 137, 218, 0.3);
+}
+
+.discord:hover {
+  background: rgba(114, 137, 218, 0.15);
+  border-color: #7289da;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(114, 137, 218, 0.3);
+}
+
+.telegram {
+  background: rgba(0, 0, 0, 0.8);
+  border-color: rgba(0, 136, 204, 0.3);
+}
+
+.telegram:hover {
+  background: rgba(0, 136, 204, 0.15);
+  border-color: #0088cc;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 136, 204, 0.3);
+}
+
+.x {
+  background: rgba(29, 29, 31, 0.9);
+  border-color: rgba(29, 155, 240, 0.3);
+}
+
+.x:hover {
+  background: rgba(29, 155, 240, 0.15);
+  border-color: #1da1f2;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(29, 155, 240, 0.3);
+}
+
+/* Active/Click effect */
+.socialBtn:active {
   transform: scale(0.95);
 }
 
-/* Social Icons Themselves */
-.socialIcon {
-  filter: brightness(0) invert(1); /* Makes icons white for contrast */
+/* Icon styling */
+.socialBtn img {
+  filter: brightness(0) invert(1);
   transition: all 0.2s ease;
-  border-radius: 4px;
 }
 
-.socialIconWrapper:hover .socialIcon {
-  filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(200deg);
+.socialBtn:hover img {
   transform: scale(1.1);
 }
 
-/* Specific Icon Styles (Optional - for unique colors on hover) */
-.githubIcon:hover ~ .socialIcon {
-  filter: brightness(0) invert(1) sepia(0.3) saturate(4) hue-rotate(150deg); /* GitHub green */
-}
-
-.discordIcon:hover ~ .socialIcon {
-  filter: brightness(0) invert(1) sepia(0.2) saturate(5) hue-rotate(280deg); /* Discord purple */
-}
-
-.telegramIcon:hover ~ .socialIcon {
-  filter: brightness(0) invert(1) sepia(0.8) saturate(3) hue-rotate(60deg); /* Telegram blue */
-}
-
-.xIcon:hover ~ .socialIcon {
-  filter: brightness(0) invert(1) sepia(0.9) saturate(2) hue-rotate(0deg); /* X black/white */
-}
-
-/* Tooltip on Hover */
-.iconTooltip {
-  position: absolute;
-  bottom: -35px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 5px 10px;
-  border-radius: 4px;
-  font-size: 12px;
-  white-space: nowrap;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-  pointer-events: none;
-  z-index: 10;
-}
-
-.socialIconWrapper:hover .iconTooltip {
-  opacity: 1;
-  visibility: visible;
-  bottom: -30px;
-}
-
-/* Responsive Design */
+/* RESPONSIVE - Smaller but STILL side-by-side */
 @media (max-width: 768px) {
-  .socialIcons {
-    gap: 15px;
+  .socialIconsPro {
+    gap: 8px;
+    padding: 15px 0;
   }
   
-  .socialIconWrapper {
-    width: 45px;
-    height: 45px;
+  .socialBtn {
+    width: 48px !important;
+    height: 48px !important;
+    min-width: 48px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .socialIconsPro {
+    gap: 6px;
   }
   
-  .socialIcon {
-    width: 28px !important;
-    height: 28px !important;
-  }
-  
-  .socialIconsContainer h3 {
-    font-size: 16px;
+  .socialBtn {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
   }
 }
